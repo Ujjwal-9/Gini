@@ -2,8 +2,8 @@
 Gini Implementation in C++, R, Python.
 
 #### C++ Implementation:
-- Snippet-1
-```
+
+```C++
 double Gini(const std::vector &a, decltype(a) &p) {
   assert(a.size() == p.size());
   struct K {double a, p;} k[a.size()];
@@ -22,8 +22,8 @@ double GiniNormalized(const std::vector &a, decltype(a) &p) {
   return Gini(a, p)/Gini(a, a);
 }
 ```
-- Snippet-2
-```
+
+```C++
 #include <vector>
 #include <algorithm>
 #include <assert.h>
@@ -86,7 +86,7 @@ compile with:
 g++-4.6 -std=c++0x gini.cc
 
 #### R Implementation:
-```
+```R
 normalizedGini <- function(aa, pp) {
     Gini <- function(a, p) {
         if (length(a) !=  length(p)) stop("Actual and Predicted need to be equal lengths!")
@@ -104,7 +104,7 @@ normalizedGini <- function(aa, pp) {
 ```
 
 #### Python Implementation:
-```
+```python
 def gini(actual, pred, cmpcol = 0, sortcol = 1):
      assert( len(actual) == len(pred) )
      all = np.asarray(np.c_[ actual, pred, np.arange(len(actual)) ], dtype=np.float)
